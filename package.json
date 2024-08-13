@@ -1,6 +1,6 @@
 {
   "name": "@elias102/table_tailwind_react",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -54,5 +54,8 @@
   },
   "peerDependencies": {
     "react": "^18.3.1"
+  },
+  "publishConfig": {
+    "@elias102:registry": "https://registry.npmjs.org"
   }
 }
