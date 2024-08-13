@@ -1,5 +1,5 @@
 {
-  "name": "table_tailwind_react",
+  "name": "@elias102/table_tailwind_react",
   "version": "1.0.0",
   "type": "module",
   "main": "dist/index.cjs.js",
