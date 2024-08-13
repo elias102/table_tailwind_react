@@ -55,7 +55,8 @@
   "peerDependencies": {
     "react": "^18.3.1"
   },
-  "publishConfig": {
-    "@elias102:registry": "https://registry.npmjs.org"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elias102/table_tailwind_react.git"
   }
 }
