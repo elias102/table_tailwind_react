@@ -1,4 +1,4 @@
-name: publish on github
+name: Table React Package
 
 on:
   push:
