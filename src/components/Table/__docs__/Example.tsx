@@ -2,18 +2,13 @@ import React from "react";
 import Table from "../Table";
 
 const Example = () => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100%",
-      }}
-    >
-      <Table />
-    </div>
-  );
+  const headerCellList = ["ID", "FirstName", "LastName"];
+  const dataCellList = [
+    { id: 1, firstName: "elias", lastName: "sharafi" },
+    { id: 2, firstName: "sadra", lastName: "sharafi" },
+    { id: 3, firstName: "hermes", lastName: "sharafi" },
+  ];
+  return <Table headerCellList={headerCellList} dataCellList={dataCellList} />;
 };
 
 export default Example;
