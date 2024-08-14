@@ -2,6 +2,8 @@
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { peerDependencies } from "./package.json";
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+import tailwindcss from "tailwindcss";
 
 export default defineConfig({
   test: {
@@ -22,5 +24,10 @@ export default defineConfig({
     sourcemap: true, // Generates source maps for debugging.
     emptyOutDir: true, // Clears the output directory before building.
   },
-  plugins: [dts()], // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
+  plugins: [dts(), cssInjectedByJsPlugin()], // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
+  css: {
+    postcss: {
+      plugins: [tailwindcss],
+    },
+  },
 });
