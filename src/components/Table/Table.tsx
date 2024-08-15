@@ -8,9 +8,14 @@ type DataCellList = {
 export type TableProps = {
   headerCellList: string[];
   dataCellList: DataCellList[];
+  shadowColorHeader?: string;
 };
 
-const Table: React.FC<TableProps> = ({ headerCellList, dataCellList }) => {
+const Table: React.FC<TableProps> = ({
+  headerCellList,
+  dataCellList,
+  shadowColorHeader,
+}) => {
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [isCheck, setIsCheck] = useState<string[]>([]);
   const [list, setList] = useState<DataCellList[]>([]);
@@ -39,12 +44,17 @@ const Table: React.FC<TableProps> = ({ headerCellList, dataCellList }) => {
 
   return (
     <table className="w-full text-sm text-left rtl:text-right text-gray-500">
-      <thead className="text-xs text-gray-700 uppercase shadow-md rounded-2xl">
+      <thead
+        style={{
+          boxShadow: `0px 4px 22px 0px ${shadowColorHeader ? shadowColorHeader : "#50d71e1F"}`,
+        }}
+        className={`text-xs text-gray-700 uppercase rounded-2xl`}
+      >
         <tr>
           <th className="px-6 py-3">
             <input
               type="checkbox"
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
+              className="w-4 h-4 text-blue-600 border-gray-400 rounded"
               onChange={handleSelectAll}
               checked={isCheckAll}
             />
@@ -68,7 +78,7 @@ const Table: React.FC<TableProps> = ({ headerCellList, dataCellList }) => {
             <td className="px-6 py-4">
               <input
                 type="checkbox"
-                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
+                className="w-4 h-4 text-blue-600 border-gray-400 rounded"
                 id={data.id}
                 onChange={handleClick}
                 checked={isCheck.includes(data.id)}

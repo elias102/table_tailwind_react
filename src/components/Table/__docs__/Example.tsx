@@ -8,7 +8,13 @@ const Example = () => {
     { id: "2", firstName: "sadra", lastName: "sharafi" },
     { id: "3", firstName: "hermes", lastName: "sharafi" },
   ];
-  return <Table headerCellList={headerCellList} dataCellList={dataCellList} />;
+  return (
+    <Table
+      headerCellList={headerCellList}
+      dataCellList={dataCellList}
+      shadowColorHeader="#0875921F"
+    />
+  );
 };
 
 export default Example;
