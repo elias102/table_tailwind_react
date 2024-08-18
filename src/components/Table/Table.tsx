@@ -10,6 +10,7 @@ export type TableProps = {
   dataCellList: DataCellList[];
   shadowColorHeader?: string;
   checkboxBorderColor?: string;
+  textDataCellColor?: string;
 };
 
 const Table: React.FC<TableProps> = ({
@@ -17,6 +18,7 @@ const Table: React.FC<TableProps> = ({
   dataCellList,
   shadowColorHeader,
   checkboxBorderColor,
+  textDataCellColor,
 }) => {
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [isCheck, setIsCheck] = useState<string[]>([]);
@@ -87,7 +89,10 @@ const Table: React.FC<TableProps> = ({
               />
             </td>
             {Object.values(data).map((value, i) => (
-              <td key={i} className="px-6 py-4">
+              <td
+                key={i}
+                className={`px-6 py-4  ${textDataCellColor && textDataCellColor}`}
+              >
                 {value}
               </td>
             ))}

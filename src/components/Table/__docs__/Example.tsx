@@ -11,6 +11,7 @@ const Example: FC<TableProps> = ({
   ],
   shadowColorHeader = "#0875921F",
   checkboxBorderColor = "border-blue-400",
+  textDataCellColor = "text-blue-400",
 }) => {
   return (
     <Table
@@ -18,6 +19,7 @@ const Example: FC<TableProps> = ({
       dataCellList={dataCellList}
       shadowColorHeader={shadowColorHeader}
       checkboxBorderColor={checkboxBorderColor}
+      textDataCellColor={textDataCellColor}
     />
   );
 };

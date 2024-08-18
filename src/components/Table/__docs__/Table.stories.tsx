@@ -36,6 +36,7 @@ export const Primary: Story = {
     ],
     shadowColorHeader: "#0875921F",
     checkboxBorderColor: "border-tahiti",
+    textDataCellColor: "text-tahiti",
   },
 };
 export const Secondary: Story = {
