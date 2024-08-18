@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 type DataCellList = {
   id: string;
-  [key: string]: string | number;
+  [key: string]: string | number | React.JSX.Element;
 };
 
 export type TableProps = {
