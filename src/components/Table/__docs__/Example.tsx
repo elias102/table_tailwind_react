@@ -1,18 +1,22 @@
-import React from "react";
-import Table from "../Table";
+import React, { FC } from "react";
+import Table, { TableProps } from "../Table";
 
-const Example = () => {
-  const headerCellList = ["ID", "FirstName", "LastName"];
-  const dataCellList = [
+const Example: FC<TableProps> = ({
+  headerCellList = ["ID", "FirstName", "LastName"],
+  dataCellList = [
     { id: "1", firstName: "elias", lastName: "sharafi" },
     { id: "2", firstName: "sadra", lastName: "sharafi" },
     { id: "3", firstName: "hermes", lastName: "sharafi" },
-  ];
+  ],
+  shadowColorHeader = "#0875921F",
+  checkboxBorderColor = "border-blue-400",
+}) => {
   return (
     <Table
       headerCellList={headerCellList}
       dataCellList={dataCellList}
-      shadowColorHeader="#0875921F"
+      shadowColorHeader={shadowColorHeader}
+      checkboxBorderColor={checkboxBorderColor}
     />
   );
 };

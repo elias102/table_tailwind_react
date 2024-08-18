@@ -9,12 +9,14 @@ export type TableProps = {
   headerCellList: string[];
   dataCellList: DataCellList[];
   shadowColorHeader?: string;
+  checkboxBorderColor?: string;
 };
 
 const Table: React.FC<TableProps> = ({
   headerCellList,
   dataCellList,
   shadowColorHeader,
+  checkboxBorderColor,
 }) => {
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [isCheck, setIsCheck] = useState<string[]>([]);
@@ -78,7 +80,7 @@ const Table: React.FC<TableProps> = ({
             <td className="px-6 py-4">
               <input
                 type="checkbox"
-                className="w-4 h-4 text-blue-600 border-gray-400 rounded"
+                className={`w-4 h-4 text-blue-600 ${checkboxBorderColor ? checkboxBorderColor : "border-gray-400"}  rounded`}
                 id={data.id}
                 onChange={handleClick}
                 checked={isCheck.includes(data.id)}

@@ -11,19 +11,25 @@ type Story = StoryObj<typeof Example>;
 
 export const Primary: Story = {
   args: {
-    text: "Table",
-    primary: true,
-    disabled: false,
-    size: "small",
-    onClick: () => console.log("Table"),
+    headerCellList: ["id", "FirstName", "LastName"],
+    dataCellList: [
+      { id: "1", firstName: "elias", lastName: "sharafi" },
+      { id: "2", firstName: "sadra", lastName: "sharafi" },
+      { id: "3", firstName: "hermes", lastName: "sharafi" },
+    ],
+    shadowColorHeader: "#0875921F",
+    checkboxBorderColor: "border-tahiti",
   },
 };
 export const Secondary: Story = {
   args: {
-    text: "Table",
-    primary: false,
-    disabled: false,
-    size: "small",
-    onClick: () => console.log("Table"),
+    headerCellList: ["ID", "FirstName", "LastName"],
+    dataCellList: [
+      { id: "1", firstName: "elias", lastName: "sharafi" },
+      { id: "2", firstName: "sadra", lastName: "sharafi" },
+      { id: "3", firstName: "hermes", lastName: "sharafi" },
+    ],
+    shadowColorHeader: "#0875921F",
+    checkboxBorderColor: "border-blue-400",
   },
 };
